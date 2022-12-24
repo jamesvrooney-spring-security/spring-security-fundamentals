@@ -1,5 +1,5 @@
 spring:
   output.ansi.enabled: always
 
-  security.user.name: james
-  security.user.password: password
+#  security.user.name: james
+#  security.user.password: password
