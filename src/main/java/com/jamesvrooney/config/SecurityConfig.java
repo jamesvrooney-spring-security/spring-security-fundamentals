@@ -13,25 +13,25 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        final var userDetailsService = new InMemoryUserDetailsManager();
-
-        var james = User.withUsername("james")
-                .password(passwordEncoder().encode("password"))
-                .authorities("dude")
-                .build();
-
-        var john = User.withUsername("john")
-                .password(passwordEncoder().encode("password"))
-                .authorities("dudette")
-                .build();
-
-        userDetailsService.createUser(james);
-        userDetailsService.createUser(john);
-
-        return userDetailsService;
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService() {
+//        final var userDetailsService = new InMemoryUserDetailsManager();
+//
+//        var james = User.withUsername("james")
+//                .password(passwordEncoder().encode("password"))
+//                .authorities("dude")
+//                .build();
+//
+//        var john = User.withUsername("john")
+//                .password(passwordEncoder().encode("password"))
+//                .authorities("dudette")
+//                .build();
+//
+//        userDetailsService.createUser(james);
+//        userDetailsService.createUser(john);
+//
+//        return userDetailsService;
+//    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
