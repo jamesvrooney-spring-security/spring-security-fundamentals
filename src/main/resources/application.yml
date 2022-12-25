@@ -3,3 +3,15 @@ spring:
 
 #  security.user.name: james
 #  security.user.password: password
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_security_fundamentals_2022
+    username: jamesrooney
+    password: password
+
+  jpa:
+    properties.hibernate:
+      jdbc.lob.non_contextual_creation: true
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+    # Hibernate ddl auto (create, create-drop, validate, update)
+#    hibernate.ddl-auto: update
