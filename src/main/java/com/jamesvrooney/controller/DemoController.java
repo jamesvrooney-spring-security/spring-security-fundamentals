@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     @GetMapping("hello")
-    public String hello(Authentication authentication) {
+    public String hello() {
         log.info("Hitting /hello endpoint.");
 
-        final String name = authentication.getName();
+//        final String name = authentication.getName();
 
-        final String greeting = "Hello " + name;
+        final String greeting = "Hello James";
 
         return greeting;
     }
