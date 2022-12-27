@@ -21,6 +21,10 @@ public class SecurityConfig {
         return httpSecurity
                 .httpBasic()
                 .and()
+                .authorizeHttpRequests()
+                .requestMatchers("/hello").hasAuthority("read")
+                .anyRequest().authenticated()
+                .and()
                 .build();
     }
 
@@ -33,7 +37,13 @@ public class SecurityConfig {
                 .authorities("read")
                 .build();
 
+        final UserDetails bob = User.withUsername("bob")
+                .password(passwordEncoder().encode("password"))
+                .authorities("write")
+                .build();
+
         userDetailsService.createUser(john);
+        userDetailsService.createUser(bob);
 
         return userDetailsService;
     }

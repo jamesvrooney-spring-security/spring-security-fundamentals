@@ -11,6 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
 
+    @GetMapping("demo")
+    public String demo(Authentication authentication) {
+        log.info("Hitting /demo endpoint.");
+
+        final String greeting = "Demo " + authentication.getName();
+
+        return greeting;
+    }
+
     @GetMapping("hello")
     public String hello(Authentication authentication) {
         log.info("Hitting /hello endpoint.");
