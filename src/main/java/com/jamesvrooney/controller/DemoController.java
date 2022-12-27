@@ -13,7 +13,7 @@ public class DemoController {
 
     @GetMapping("hello")
     public String hello(Authentication authentication) {
-        log.info("Hitting /hello endpoint.");
+        log.info("Hitting /hello endpoint...");
 
         final String name = authentication.getName();
 
