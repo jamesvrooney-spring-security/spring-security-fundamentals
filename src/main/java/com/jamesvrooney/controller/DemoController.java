@@ -2,7 +2,6 @@ package com.jamesvrooney.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,12 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     @GetMapping("hello")
-    public String hello(Authentication authentication) {
+    public String hello() {
         log.info("Hitting /hello endpoint.");
 
-        final String name = authentication.getName();
-
-        final String greeting = "Hello " + name;
+        final String greeting = "Hello James";
 
         return greeting;
     }
